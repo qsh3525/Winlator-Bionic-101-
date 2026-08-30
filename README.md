@@ -4,7 +4,7 @@ Guide for new users to setup games using
 
 Mainly catered to adreno gpu users. Mali and Xclipse gpu users can still benefit from this guide a lot.
 
-
+[Go here to get links of various components of relevance that are mentioned in this guide, they are mostly in .wcp format](https://github.com/qsh3525/Winlator-Bionic-101-/blob/main/components.md)
 ## Proton/wine
 
 **Proton 9** is the original and default, and should be used first. 
