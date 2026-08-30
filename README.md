@@ -1,4 +1,8 @@
 ### Winlator-Bionic-101²-
+Guide for new users to setup games using 
+[Ludashi](https://github.com/StevenMXZ/Winlator-Ludashi), [Winnative](https://github.com/WinNative-Emu/WinNative), [Gamenative](https://github.com/utkarshdalal/GameNative/releases), and so on.
+
+Mainly catered to adreno gpu users. Mali and Xclipse gpu users can still benefit from this guide a lot.
 
 
 ## Proton/wine
@@ -41,11 +45,16 @@ There lies Pulseaudio and ALSA; with pulseaudio being the most preferable one, a
 To avoid wasting time troubleshooting for the simplest things; ALWAYS google up the name of your game and what graphics API it uses. 
 
 # Wrappers
-These are used to load your graphics drivers to run vulkan apps; It may contain various kinds of spoofs and support for Vulkan extensions that may not be present on the graphics driver. 
-In most forks, 'Wrapper' is the default and most updated wrapper by pippeto-crypto, which is best for adreno users, and also allows for bcn emulation required for Mali and xclipse GPU users.
-'Wrapper-v2', present in Cmod v13 & Gamenative is an unfinished and old wrapper that is almost 2 years old now.
-'Wrapper-leegao'- Lee Gao's bionic wrapper for Xclipse and Mali gpus, quite old now.
-'Wrapper-Gamenative' - The most updated wrapper for Mali and Xclispe GPU devices. allows Mali gpu users to load Dxvk 2.0+ and VKD3D (dx12) if their driver is new enough. not of note to adreno users.
+A very important component that is used to load your graphics driver to run vulkan apps, and spoofs extensions unsupported by original GPU driver for compatibility.
+
+List of wrappers of relevance in forks:
+*'Wrapper' ⭐* - The most up to date wrapper, good for adreno gpu devices, also supports bcn texture decomp needed for Xclispe and Mali GPUs.
+
+*Wrapper-v2* - Old and unfinished, found in (cmod-v13)[https://github.com/coffincolors/winlator/releases/tag/cmod_v13.1] and (Gamenative)[https://github.com/utkarshdalal/GameNative/releases], Shouldn't be used, as 'wrapper' performs better and have more fixes.
+
+*Wrapper-leegao* - found in gamenative, it is (Lee gao's bionic wrapper)[https://github.com/leegao/bionic-vulkan-wrapper/releases/tag/v0.0.5r5], for mali and Xclipse GPUs, better alternative exists by now.
+
+*Wrapper-Gamenative ⭐* - found in many forks now; best wrapper for Mali and xclipse, contains new improvements by Lee gao regarding running dxvk 2.0+ and VKD3D on new Mali driver blobs. ***Not recommended for adreno users.***
 
 # Graphics Drivers
 for a6xx - [Amaral turnip](https://github.com/rickamaral94/Amaral-Adreno-Tools) and [StevenMXZ](https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases)
