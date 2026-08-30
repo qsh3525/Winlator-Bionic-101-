@@ -50,7 +50,7 @@ A very important component that is used to load your graphics driver to run vulk
 List of wrappers of relevance in forks:
 *'Wrapper' ⭐* - The most up to date wrapper, good for adreno gpu devices, also supports bcn texture decomp needed for Xclispe and Mali GPUs.
 
-*Wrapper-v2* - Old and unfinished, found in (cmod-v13)[https://github.com/coffincolors/winlator/releases/tag/cmod_v13.1] and (Gamenative)[https://github.com/utkarshdalal/GameNative/releases], Shouldn't be used, as 'wrapper' performs better and have more fixes.
+*Wrapper-v2* - Old and unfinished, found in [cmod-v13](https://github.com/coffincolors/winlator/releases/tag/cmod_v13.1) and [Gamenative](https://github.com/utkarshdalal/GameNative/releases), Shouldn't be used, as 'wrapper' performs better and have more fixes.
 
 *Wrapper-leegao* - found in gamenative, it is (Lee gao's bionic wrapper)[https://github.com/leegao/bionic-vulkan-wrapper/releases/tag/v0.0.5r5], for mali and Xclipse GPUs, better alternative exists by now.
 
@@ -91,10 +91,19 @@ in winlator bionic there's 2 options
 These games are fairly simple to run, and does not need much for graphical configuration, as it is directly running vulkan.
 
 **RDR2** - Requires VulkanRT to be installed in the container;
+
 **DOOM(2016)** - Requires you to use Wrapper leegao in gamenative, while in winnative and Ludashi by StevenMXZ to have the present mode be anything else other than mailbox.
 
 # DirectX Wrappers for DX Games ⭐
 
-**DXVK** - Translates directX 8-11 API to vulkan, is very fast. For turnip users, it is recommended to use dxvk 2.4.1 for best performance, and newer dxvk's that have leegao's disable binary semaphores patches to retain performance on turnip; these mostly go by 'dxvk-pre-regress' or dxvk binsem.
+**DXVK** - Translates DX8-11 to Vulkan
+*Recommended for adreno: 2.4.1.1 or newer DXVK Tagged with 'binsem' or 'pre-regress', without this patch, newer dxvk have a big performance regression that occured after 2.4.1 versions.*
 
-**VKD3D** - Translates DirectX12 to Vulkan. Generally recommended to use the latest version; however if that fails, 2.14.1 is a safe and good fallback.
+*Recommended for Mali and PowerVR: DXVK Sarek, or dxvk 2.7.1 stable if you have a new Mali driver blob, using wrapper-gamenative.*
+
+ **VKD3D** - Translates DX12 to Vulkan
+ *Recommended for adreno: Latest VKD3D stable/nightly, 2.8 or 2.14.1 are safe fallbacks.*
+
+*Recommended for Mali with new driver blob: VKD3D 2.14.1*
+
+**D7VK**
