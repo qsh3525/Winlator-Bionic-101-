@@ -111,5 +111,36 @@ These games are fairly simple to run, and does not need much for graphical confi
 
 
 ## CPU Translation and emulation ⭐⭐⭐⭐⭐
+There's 2 CPU Translators, Fexcore on Proton/wine arm64ec & Box64 on Proton/wine X86_64.
+On proton arm64ec You have the option to use wowbox64 as the 32 bit emulator, which may perform better in some cases.
+This guide will cover Fexcore, as it generally uses less ram and has less overhead and it's preset as it has lesser parameters and is easier to configure.
 
+# TSO Behaviour on snapdragon chips;
+
+A7xx gen 1 (A725 and A730,735) Mostly don't need TSO for many games.
+A7XX gen 2 & 3 and 8xx gen 1 (740,750,830) Needs TSO for some games
+A8xx gen 2 (sm8850) NEEDS TSO for ALL games to have a shot at running.
+For SM8750 and SM8850 Users, when using tso, use this variable ``WRAPPER_DMAHEAP_CACHED=1`` to regain some performance.
+
+# Fexcore Presets roundup on various kinds of game engines by @Tranquility
+
+Tested on Snapdragon 8 gen 3, proton 9arm64ec Fex (2601, as a few games don't work with anything newer, such as Silksong, so 2601 is a bit more compatible) with the Extreme Preset or Extreme + TSO enabled. 
+32-bit emulator should be FEXCore
+
+The main differientiator is mainly just engines, so that's what I'll be using as a basic guide. Everything is using FEXCore unless stated otherwise.
+
+Unreal Engine 1: (Unreal Tournament 1999, Deus Ex): Extreme
+Unreal Engine 2: (Postal 2, Unreal Tournament 2004): Extreme
+Unreal Engine 3 (Mortal Kombat X, A Hat in Time, Batman Arkham series): Extreme + TSO
+Unreal Engine 4 (Final Fantasy VII Remake, Star Wars Jedi Fallen Order): Extreme
+Unreal Engine 5 (Dragon Ball Sparking Zero, Palworld, Black Myth Wukong): Extreme
+Unity: Depends on game, but most will require Extreme + TSO. Some outliers that can use the normal extreme preset are Hollow Knight and Hollow Knight Silksong. Best to keep it on Extreme + TSO unless you need more performance.
+Godot: Extreme
+
+Other engines:
+
+4A (Metro Trilogy): Extreme + TSO
+RE Engine: (Resident Evil Games, Devil May Cry games, Monster Hunter games, Pragmata): Extreme + TSO
+Creation Engine (Fallout series, Elder Scrolls games): Extreme (although Fallout New Vegas, being the unstable mess that it is may need Extreme + TSO)
+Source Engine (Half Life 2, Portal): Extreme
 
