@@ -1,5 +1,5 @@
 ### Winlator-Bionic-101²-
-Guide for new users to setup games using 
+Guide for new users to setup games and gain a better understanding of various functions and technologies employed inside 
 [Ludashi](https://github.com/StevenMXZ/Winlator-Ludashi), [Winnative](https://github.com/WinNative-Emu/WinNative), [Gamenative](https://github.com/utkarshdalal/GameNative/releases), and so on.
 
 Mainly catered to adreno gpu users. Mali and Xclipse gpu users can still benefit from this guide a lot.
@@ -73,7 +73,7 @@ for a8xx - [StevenMXZ](https://github.com/StevenMXZ/Adreno-Tools-Drivers/release
 
 **EGL** - Best for OpenGL games, offering the best FPS for opengl API games.
 
-**DisplayX** - Better than surfaceFlinger, developed by pippeto crypto, offers vastly better frame pacing than any other implementations; However at the time of making this guide, the 'Bypass x11' option within DisplayX will give a 10-30% fps loss upon usage.
+**DisplayX** - Better than surfaceFlinger, developed by pippeto crypto, offers vastly better frame pacing than any other implementations; However at the time of making this guide, the 'Bypass x11' option within DisplayX will give a 10% or much more, depending on the game, fps loss upon usage.
 
 # OpenGL API games
 in winlator bionic there's 2 options
