@@ -94,7 +94,7 @@ These games are fairly simple to run, and does not need much for graphical confi
 
 **DOOM(2016)** - Requires you to use Wrapper leegao in gamenative, while in winnative and Ludashi by StevenMXZ to have the present mode be anything else other than mailbox.
 
-# DirectX Wrappers for DX Games ⭐
+# Relevant DirectX Wrappers for DX Games ⭐
 
 **DXVK** - Translates DX8-11 to Vulkan
 *Recommended for adreno: 2.4.1.1 or newer DXVK Tagged with 'binsem' or 'pre-regress', without this patch, newer dxvk have a big performance regression that occured after 2.4.1 versions.*
@@ -106,4 +106,10 @@ These games are fairly simple to run, and does not need much for graphical confi
 
 *Recommended for Mali with new driver blob: VKD3D 2.14.1*
 
-**D7VK**
+**D7VK** Translates DirectX 6/7 to Vulkan.
+*How to use? Download [D7VK](https://github.com/WinterSnowfall/d7vk/releases), Copy the ddraw.dll into your game folder, and use `DXVK_HUD` to see if game is using D7VK.*
+
+
+## CPU Translation and emulation ⭐⭐⭐⭐⭐
+
+
