@@ -1,17 +1,21 @@
-# Winlator-Bionic-101²-
-This is a guide for winlator bionic and forks for NEW users, mostly for adreno, specifically highlighting the use of Proton-arm64ec and fexcore. there will be no workarounds for niche games, but will help you troubleshoot problems yourself when trying to configure games. 
-
-### Proton/wine
-
-Proton 9 is recommended; however you may switch if a game is having cutscene issues; or a game/launcher has patches to work on a newer proton, the proton10-arm64ec2(gamenative) or Proton10-arm64ec(legacy) in ludashi, If both of these don't work, then try the other versions.
+### Winlator-Bionic-101²-
 
 
-### Win components
+## Proton/wine
+
+**Proton 9** is the original and default, and should be used first. 
+
+**Proton-10arm64ec** should also be used as a default fallback; as most cutscenes and fmv's not working are fixed in this version.
+
+**Proton 11 and above;** these versions can be used to gain performance in some games and provide more compatibility.
+
+
+## Win components
 
 These can stay mostly untouched, unless you're having audio issues, you can try switching xaudio, directmusic to native or builtin.
 
 
-### Environmental variables
+## Environmental variables
 
 these are in some cases, crucial for some games to work, you can either find the variables in protondb or winehq, here are a few that may be of note. 
 
@@ -26,14 +30,14 @@ these are in some cases, crucial for some games to work, you can either find the
 `GALLIUM_HUD=simple,fps` ; This is an accurate fps counter for OPENGL graphics API games.
 
 
-### Drives
+## Drives
 Self explanatory, you can set a folder path to a drive in the container, to a folder of your choice, to run an exe from the container, or to copy files from and in the container.
 
-### Audio driver
+## Audio driver
 There lies Pulseaudio and ALSA; with pulseaudio being the most preferable one, as it works for 80% of games without audio stuttering and cracking. Do note, some emulators have the environmental variable `PULSE_LATENCY_MSEC` and this WILL conflict during the usage of ALSA, so make sure to delete it before using ALSA.
 
 
-### Graphics 
+## Graphics 
 To avoid wasting time troubleshooting for the simplest things; ALWAYS google up the name of your game and what graphics API it uses. 
 
 # Wrappers
@@ -63,18 +67,24 @@ for a8xx - [StevenMXZ](https://github.com/StevenMXZ/Adreno-Tools-Drivers/release
 **DisplayX** - Better than surfaceFlinger, developed by pippeto crypto, offers vastly better frame pacing than any other implementations; However at the time of making this guide, the 'Bypass x11' option within DisplayX will give a 10-30% fps loss upon usage.
 
 # OpenGL API games
-In adreno, there is now 2 ways to run opengl games; using **zink**, which translates OpenGL to Vulkan, which the turnip drivers will run.
-This approach is slow, starting from ludashi 4.0, the introduction of the **freedreno** driver increases performance by up to 3x.
-Recommended settings for opengl : ***EGL+Freedreno, DisplayX+Freedreno***
-For mali users, please note that <ins>opengl3.3+ API games will not work, and freedreno will not work, you are limited to zink for now.
+in winlator bionic there's 2 options
+
+**zink** - default for most forks before [ludashi 4.0 EA](https://github.com/StevenMXZ/Winlator-Ludashi/releases/tag/v4.0); it is automatically used on adreno and Mali gpus, it is an opengl to vulkan translation layer. Please note, *Mali gpu users are not able to run games that are above opengl 3.3 API*.
+
+**Freedreno KGSL** - introduced in [ludashi 4.0 EA](https://github.com/StevenMXZ/Winlator-Ludashi/releases/tag/v4.0) it is the mesa opengl driver for adreno gpu, provides 3x more performance than zink in many cases, but it is still quite new implementation, and may have compatibility problems.
+
+*Recommended setup for adreno:*
+*EGL+Freedreno*; *DisplayX perf mode+Freedreno*
+
 
 # Vulkan API Games
 
 These games are fairly simple to run, and does not need much for graphical configuration, as it is directly running vulkan.
+
 **RDR2** - Requires VulkanRT to be installed in the container;
 **DOOM(2016)** - Requires you to use Wrapper leegao in gamenative, while in winnative and Ludashi by StevenMXZ to have the present mode be anything else other than mailbox.
 
-## DirectX Wrappers for DX Games ⭐
+# DirectX Wrappers for DX Games ⭐
 
 **DXVK** - Translates directX 8-11 API to vulkan, is very fast. For turnip users, it is recommended to use dxvk 2.4.1 for best performance, and newer dxvk's that have leegao's disable binary semaphores patches to retain performance on turnip; these mostly go by 'dxvk-pre-regress' or dxvk binsem.
 
