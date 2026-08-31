@@ -115,6 +115,9 @@ There's 2 CPU Translators, Fexcore on Proton/wine arm64ec & Box64 on Proton/wine
 On proton arm64ec You have the option to use wowbox64 as the 32 bit emulator, which may perform better in some cases.
 This guide will cover Fexcore, as it generally uses less ram and has less overhead and it's preset as it has lesser parameters and is easier to configure.
 
+# Fexcore PPA .wcp
+Recommended to use for those with older kernel devices to prevent fexcore from crashing outright. the ppa builds have some build flags that don't crash on older kernel devices. Go to the first header to find downloads.
+
 # TSO Behaviour on snapdragon chips;
 
 A7xx gen 1 (A725 and A730,735) Mostly don't need TSO for many games.
