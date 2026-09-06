@@ -5,6 +5,18 @@ Guide for new users to setup games and gain a better understanding of various fu
 Mainly catered to adreno gpu users. Mali and Xclipse gpu users can still benefit from this guide a lot.
 
 [Go here to get links of various components of relevance that are mentioned in this guide, they are mostly in .wcp format](https://github.com/qsh3525/Winlator-Bionic-101-/blob/main/components.md)
+
+### Best practices and some advice before reading the rest of this guide;
+1. ALWAYS install the required binaries/dependencies for your game in the container
+
+2. Search what engine and graphics API your game has on google
+
+3. Do not waste time on games that require hardware/kernel level anti cheat unless it can be disabled/removed.
+
+4. For GOG/game installers, use Proton x86_64 with Box64 Intermediate preset OR use [BFE](https://github.com/The412Banner/BFE/releases) and extract the game files in a fraction of the time.
+
+5. Don't expect EA Launcher or Ubisoft connect or Rockstar Launcher to run on winlator forks; to this date, there is no fork that can run those, only gamehub can, this entry will be updated soon. 
+
 ## Proton/wine
 
 **Proton 9** is the original and default, and should be used first. 
@@ -31,11 +43,24 @@ these are in some cases, crucial for some games to work, you can either find the
 
 `DXVK_HUD=fps,dev info` ; An accurate fps counter, that should be used for most performance comparisons, for directX 8-11 games utilizing DXVK, and can show which direct x version the game/app is using.
 
+`VKD3D_SHADER_MODEL=6_6` ; Required for some new DX12 Games, already added by default in most forks.
+
 `GALLIUM_HUD=simple,fps` ; This is an accurate fps counter for OPENGL graphics API games.
+
+## Executable Arguments (Game shortcut area)
+Some of these are very important, and crucial to get some games to boot.
+
+`-d3d11` or `-dx11` ; Required for some indecisive games to boot, or switch the graphics API to dx11, which in most cases, run better than dx12 with vkd3d.
+
+`-d3d12` or `dx12` ; Same reason as above
+
+`-force-gfx-direct` ; Stops some crashes on unity games, and increases performance! 
+
+`--rendering-driver vulkan` ; Required for most godot games to switch to the Vulkan API, as it mostly defaults to opengl, which is kinda broken on godot games..
 
 
 ## Drives
-Self explanatory, you can set a folder path to a drive in the container, to a folder of your choice, to run an exe from the container, or to copy files from and in the container.
+Self explanatory, you can set a folder path to a drive in the container, to a folder of your choie, to run an exe from the container, or to copy files from and in the container.
 
 ## Audio driver
 There lies Pulseaudio and ALSA; with pulseaudio being the most preferable one, as it works for 80% of games without audio stuttering and cracking. Do note, some emulators have the environmental variable `PULSE_LATENCY_MSEC` and this WILL conflict during the usage of ALSA, so make sure to delete it before using ALSA.
@@ -52,7 +77,7 @@ List of wrappers of relevance in forks:
 
 *Wrapper-v2* - Old and unfinished, found in [cmod-v13](https://github.com/coffincolors/winlator/releases/tag/cmod_v13.1) and [Gamenative](https://github.com/utkarshdalal/GameNative/releases), Shouldn't be used, as 'wrapper' performs better and have more fixes.
 
-*Wrapper-leegao* - found in gamenative, it is (Lee gao's bionic wrapper)[https://github.com/leegao/bionic-vulkan-wrapper/releases/tag/v0.0.5r5], for mali and Xclipse GPUs, better alternative exists by now.
+*Wrapper-leegao* - found in gamenative, it is [Lee gao's bionic wrapper](https://github.com/leegao/bionic-vulkan-wrapper/releases/tag/v0.0.5r5), for mali and Xclipse GPUs, better alternative exists by now.
 
 *Wrapper-Gamenative ⭐* - found in many forks now; best wrapper for Mali and xclipse, contains new improvements by Lee gao regarding running dxvk 2.0+ and VKD3D on new Mali driver blobs. ***Not recommended for adreno users.***
 
@@ -76,7 +101,7 @@ for a8xx - [StevenMXZ](https://github.com/StevenMXZ/Adreno-Tools-Drivers/release
 **DisplayX** - Better than surfaceFlinger, developed by pippeto crypto, offers vastly better frame pacing than any other implementations; However at the time of making this guide, the 'Bypass x11' option within DisplayX will give a 10% or much more, depending on the game, fps loss upon usage.
 
 # OpenGL API games
-in winlator bionic there's 2 options
+in winlator bionic there's 2 graphics options 
 
 **zink** - default for most forks before [ludashi 4.0 EA](https://github.com/StevenMXZ/Winlator-Ludashi/releases/tag/v4.0); it is automatically used on adreno and Mali gpus, it is an opengl to vulkan translation layer. Please note, *Mali gpu users are not able to run games that are above opengl 3.3 API*.
 
