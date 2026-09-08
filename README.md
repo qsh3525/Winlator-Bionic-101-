@@ -15,7 +15,8 @@ Mainly catered to adreno gpu users. Mali and Xclipse gpu users can still benefit
 
 4. For GOG/game installers, use Proton x86_64 with Box64 Intermediate preset OR use [BFE](https://github.com/The412Banner/BFE/releases) and extract the game files in a fraction of the time.
 
-5. Don't expect EA Launcher or Ubisoft connect or Rockstar Launcher to run on winlator forks; to this date, there is no fork that can run those, only gamehub can, this entry will be updated soon. 
+5. Don't expect ~~EA Launcher~~ or Ubisoft connect or Rockstar Launcher to run on winlator forks; to this date, there is no fork that can run those, only gamehub can, this entry will be updated soon.
+[BANNERLATOR 3.0.7+ Supports EA LAUNCHER](https://github.com/The412Banner/Bannerlator/releases)
 
 ## Proton/wine
 
