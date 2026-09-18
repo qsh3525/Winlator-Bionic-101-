@@ -142,9 +142,9 @@ These games are fairly simple to run, and does not need much for graphical confi
 
 **DXVK** - Translates DX8-11 to Vulkan
 **Recommended for adreno: 2.4.1.1 or newer DXVK Tagged with 'binsem' or 'pre-regress', .**
-**Why use binsem or pre regress versions of newer DXVK?**
-There has been a long standing regression in turnip that causes a performance regression with new dxvk. (Full document and deep dive into this issue by Lee gao here.)[https://docs.google.com/document/d/1ggdFKIRHjO2DBonrvjQQMNFCNIcBHwh_NAfJ2i_m5fI/edit?tab=t.0#heading=h.gp0wvhqt8o7q]
-binsem tagged dxvk therefore implements a patch by Lee gao that tends to mitigate this performance regression, so if your game needs a new dxvk to not have graphical glitches, you can finally use it without performance repercussions!
+> Why use binsem or pre regress versions of newer DXVK?**
+- There has been a long standing regression in turnip that causes a performance regression with new dxvk. [Full document and deep dive into this issue by Lee gao here.](https://docs.google.com/document/d/1ggdFKIRHjO2DBonrvjQQMNFCNIcBHwh_NAfJ2i_m5fI/edit?tab=t.0#heading=h.gp0wvhqt8o7q)
+- binsem tagged dxvk therefore implements a patch by Lee gao that tends to mitigate this performance regression, so if your game needs a new dxvk to not have graphical glitches, you can finally use it without performance repercussions!
 
 *Recommended for Mali and PowerVR: DXVK Sarek, or dxvk 2.7.1 stable if you have a new Mali driver blob, using wrapper-gamenative.*
 
