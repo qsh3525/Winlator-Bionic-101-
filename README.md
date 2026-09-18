@@ -1,6 +1,6 @@
 ### Winlator-Bionic-101²-
 Guide for new users to setup games and gain a better understanding of various functions and technologies employed inside 
-[Ludashi](https://github.com/StevenMXZ/Winlator-Ludashi), [Winnative](https://github.com/WinNative-Emu/WinNative), [Gamenative](https://github.com/utkarshdalal/GameNative/releases), and so on.
+[Ludashi](https://github.com/StevenMXZ/Winlator-Ludashi), [Bannerlator](https://github.com/The412Banner/Bannerlator/releases/tag/3.1.2), [Winnative](https://github.com/WinNative-Emu/WinNative), [Gamenative](https://github.com/utkarshdalal/GameNative/releases), and so on.
 
 Mainly catered to adreno gpu users. Mali and Xclipse gpu users can still benefit from this guide a lot.
 
@@ -63,6 +63,13 @@ Some of these are very important, and crucial to get some games to boot.
 ## Drives
 Self explanatory, you can set a folder path to a drive in the container, to a folder of your choie, to run an exe from the container, or to copy files from and in the container.
 
+# The C: Drive
+This is important, if your game has unbearable load times, or sometimes doesn't boot at all, transfer the game folder into your container's C: Drive.
+
+> Why do you need to transfer it to C: drive, and how does it help?
+- This is due to Android SAF, it scans each file painstakingly after you picked your folder outside of the app's internal storage, SEVERELY impacting loading times for certain games.
+- Once your game is in C: drive, its inside the app's own storage, and doesn't need to be scanned each time. 
+
 ## Audio driver
 There lies Pulseaudio and ALSA; with pulseaudio being the most preferable one, as it works for 80% of games without audio stuttering and cracking. Do note, some emulators have the environmental variable `PULSE_LATENCY_MSEC` and this WILL conflict during the usage of ALSA, so make sure to delete it before using ALSA.
 
@@ -74,7 +81,8 @@ To avoid wasting time troubleshooting for the simplest things; ALWAYS google up 
 A very important component that is used to load your graphics driver to run vulkan apps, and spoofs extensions unsupported by original GPU driver for compatibility.
 
 List of wrappers of relevance in forks:
-*'Wrapper' ⭐* - The most up to date wrapper, good for adreno gpu devices, also supports bcn texture decomp needed for Xclispe and Mali GPUs.
+
+**Wrapper 🌟✨**- The most up to date wrapper, good for adreno gpu devices, also supports bcn texture decomp needed for Xclispe and Mali GPUs, not yet support bcn to ASTC like wrapper-gamenative though for mali/exynos.
 
 *Wrapper-v2* - Old and unfinished, found in [cmod-v13](https://github.com/coffincolors/winlator/releases/tag/cmod_v13.1) and [Gamenative](https://github.com/utkarshdalal/GameNative/releases), Shouldn't be used, as 'wrapper' performs better and have more fixes.
 
@@ -89,6 +97,16 @@ for a7xx - [StevenMXZ](https://github.com/StevenMXZ/Adreno-Tools-Drivers/release
 
 for a8xx - [StevenMXZ](https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases), [Whitebelyash](https://github.com/whitebelyash/AdrenoToolsDrivers/releases)
 
+## Display Servers 
+So by now, you know of X11, it's used in gamehub and winlator. 
+[Bannerlator](https://github.com/The412Banner/Bannerlator/releases/tag/3.1.2) recently introduced a new display server to be used on Android, called Wayland.
+what benefits does it offer over x11?
+
+For starters, it should offer better frametimes, because it has a shorter path to compose frames to your display than x11.
+
+Second, it allows you to use HDR on the games that support it.
+
+Lastly, do not expect performance to be as good as x11 yet, it is an early implementation, and not remotely as mature as x11 which has been tried and tested in Linux and winlator for so long.
 
 # Display Renderers; 
 **OpenGL** - Deprecated in most forks
@@ -123,12 +141,15 @@ These games are fairly simple to run, and does not need much for graphical confi
 # Relevant DirectX Wrappers for DX Games ⭐
 
 **DXVK** - Translates DX8-11 to Vulkan
-*Recommended for adreno: 2.4.1.1 or newer DXVK Tagged with 'binsem' or 'pre-regress', without this patch, newer dxvk have a big performance regression that occured after 2.4.1 versions.*
+**Recommended for adreno: 2.4.1.1 or newer DXVK Tagged with 'binsem' or 'pre-regress', .**
+**Why use binsem or pre regress versions of newer DXVK?**
+There has been a long standing regression in turnip that causes a performance regression with new dxvk. (Full document and deep dive into this issue by Lee gao here.)[https://docs.google.com/document/d/1ggdFKIRHjO2DBonrvjQQMNFCNIcBHwh_NAfJ2i_m5fI/edit?tab=t.0#heading=h.gp0wvhqt8o7q]
+binsem tagged dxvk therefore implements a patch by Lee gao that tends to mitigate this performance regression, so if your game needs a new dxvk to not have graphical glitches, you can finally use it without performance repercussions!
 
 *Recommended for Mali and PowerVR: DXVK Sarek, or dxvk 2.7.1 stable if you have a new Mali driver blob, using wrapper-gamenative.*
 
  **VKD3D** - Translates DX12 to Vulkan
- *Recommended for adreno: Latest VKD3D stable/nightly, 2.8 or 2.14.1 are safe fallbacks.*
+ **Recommended for adreno: Latest VKD3D stable/nightly OR 2.8 or 2.14.1 are safe fallbacks you can try.**
 
 *Recommended for Mali with new driver blob: VKD3D 2.14.1*
 
@@ -144,17 +165,25 @@ This guide will cover Fexcore, as it generally uses less ram and has less overhe
 # Fexcore PPA .wcp
 Recommended to use for those with older kernel devices to prevent fexcore from crashing outright. the ppa builds have some build flags that don't crash on older kernel devices. Go to the first header to find downloads.
 
-# TSO Behaviour on snapdragon chips;
+# TSO, and Behaviour on snapdragon chips;
 
-A7xx gen 1 (A725 and A730,735) Mostly don't need TSO for many games.
-A7XX gen 2 & 3 and 8xx gen 1 (740,750,830) Needs TSO for some games
-A8xx gen 2 (sm8850) NEEDS TSO for ALL games to have a shot at running.
-For SM8750 and SM8850 Users, when using tso, use this variable ``WRAPPER_DMAHEAP_CACHED=1`` to regain some performance.
+What's tso you ask? [Technical explanation here](https://fex-emu.com/Scourge-of-emulation/#what-exactly-is-x86-tso) 
+In the context of winlator bionic though, Tso in the fexcore preset is crucial for many multi threaded games to either boot, or have stability.
+
+However, on many Arm SOCs, excluding apple M series, there is no hardware TSO support, so it has to be emulated using fexcore, which is why it has a high performance repercussion when enabled.
+
+TSO Behaviour on flagships (it varies depending on chip unfortunately): 
+SM7475,SM8450 - Many games work without TSO enabled
+SM8550, SM8650 - Some games need TSO enabled
+
+SM8750, SM-8850 - Many games need TSO to boot.
+
+ Use this environmental variable for sm8750,8850 - ``WRAPPER_DMAHEAP_CACHED=1`` to regain some performance using tso.
 
 # Fexcore Presets roundup on various kinds of game engines by @Tranquility
 
-Tested on Snapdragon 8 gen 3, proton 9arm64ec Fex (2601, as a few games don't work with anything newer, such as Silksong, so 2601 is a bit more compatible) with the Extreme Preset or Extreme + TSO enabled. 
-32-bit emulator should be FEXCore
+Tested on Snapdragon 8 gen 3, proton 9arm64ec Fex (2601 is used here) with the Extreme Preset or Extreme + TSO enabled. 
+32-bit emulator should be FEXCore, and if you're using fexcore 2609+, add variable `FEX_DISKCACHE=1` for less stutter and slightly more fps during loading into a new area of a game.
 
 The main differientiator is mainly just engines, so that's what I'll be using as a basic guide. Everything is using FEXCore unless stated otherwise.
 
