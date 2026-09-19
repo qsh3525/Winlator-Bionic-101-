@@ -99,7 +99,7 @@ for a8xx - [StevenMXZ](https://github.com/StevenMXZ/Adreno-Tools-Drivers/release
 
 ## Display Servers 
 So by now, you know of X11, it's used in gamehub and winlator. 
-[Bannerlator](https://github.com/The412Banner/Bannerlator/releases/tag/3.1.2) recently introduced a new display server to be used on Android, called Wayland.
+[Bannerlator](https://github.com/The412Banner/Bannerlator/releases/) recently introduced a new display server to be used on Android, called Wayland.
 what benefits does it offer over x11?
 
 For starters, it should offer better frametimes, because it has a shorter path to compose frames to your display than x11.
@@ -136,7 +136,7 @@ These games are fairly simple to run, and does not need much for graphical confi
 
 **RDR2** - Requires VulkanRT to be installed in the container;
 
-**DOOM(2016)** - Requires you to use Wrapper leegao in gamenative, while in winnative and Ludashi by StevenMXZ to have the present mode be anything else other than mailbox.
+**DOOM(2016)** - Change presentmode to anything else, except mailbox.
 
 # Relevant DirectX Wrappers for DX Games ⭐
 
@@ -149,7 +149,9 @@ These games are fairly simple to run, and does not need much for graphical confi
 *Recommended for Mali and PowerVR: DXVK Sarek, or dxvk 2.7.1 stable if you have a new Mali driver blob, using wrapper-gamenative.*
 
  **VKD3D** - Translates DX12 to Vulkan
- **Recommended for adreno: Latest VKD3D stable/nightly OR 2.8 or 2.14.1 are safe fallbacks you can try.**
+ 
+ > Recommended for adreno
+- Latest VKD3D stable/nightly OR 2.8 or 2.14.1 are safe fallbacks you can try.**
 
 *Recommended for Mali with new driver blob: VKD3D 2.14.1*
 
@@ -159,7 +161,9 @@ These games are fairly simple to run, and does not need much for graphical confi
 
 ## CPU Translation and emulation ⭐⭐⭐⭐⭐
 There's 2 CPU Translators, Fexcore on Proton/wine arm64ec & Box64 on Proton/wine X86_64.
+
 On proton arm64ec You have the option to use wowbox64 as the 32 bit emulator, which may perform better in some cases.
+
 This guide will cover Fexcore, as it generally uses less ram and has less overhead and it's preset as it has lesser parameters and is easier to configure.
 
 # Fexcore PPA .wcp
@@ -173,17 +177,19 @@ In the context of winlator bionic though, Tso in the fexcore preset is crucial f
 However, on many Arm SOCs, excluding apple M series, there is no hardware TSO support, so it has to be emulated using fexcore, which is why it has a high performance repercussion when enabled.
 
 TSO Behaviour on flagships (it varies depending on chip unfortunately): 
-SM7475,SM8450 - Many games work without TSO enabled
-SM8550, SM8650 - Some games need TSO enabled
 
-SM8750, SM-8850 - Many games need TSO to boot.
+**SM7475,SM8450** - Many games work without TSO enabled
+
+**SM8550, SM8650** - Some games need TSO enabled
+
+**SM8750, SM-8850** - Many games need TSO to boot.
 
  Use this environmental variable for sm8750,8850 - ``WRAPPER_DMAHEAP_CACHED=1`` to regain some performance using tso.
 
 # Fexcore Presets roundup on various kinds of game engines by @Tranquility
 
 Tested on Snapdragon 8 gen 3, proton 9arm64ec Fex (2601 is used here) with the Extreme Preset or Extreme + TSO enabled. 
-32-bit emulator should be FEXCore, and if you're using fexcore 2609+, add variable `FEX_DISKCACHE=1` for less stutter and slightly more fps during loading into a new area of a game.
+32-bit emulator should be FEXCore, and if you're using fexcore 2609+, add variable `FEX_DISKCACHE=1` for less stutter and slightly more fps during loading into a new area of a game, according to recent reports, that variable has compatibility issues with few games, so use on your own risk.
 
 The main differientiator is mainly just engines, so that's what I'll be using as a basic guide. Everything is using FEXCore unless stated otherwise.
 
