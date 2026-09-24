@@ -156,19 +156,24 @@ So try it out and decide for yourself.
 
  **VKD3D** - Translates DX12 to Vulkan
  
- > Recommended for adreno
+> VKD3D-proton ARM64EC
+- Reduces translation overhead; causes more problems than issues most of the time.
+
+> Recommended for adreno
 - Latest VKD3D stable/nightly OR 2.8 or 2.14.1 are safe fallbacks you can try.**
 
+  
 *Recommended for Mali with new driver blob: VKD3D 2.14.1*
 
 **D7VK** Translates DirectX 6/7 to Vulkan.
 *How to use? Download [D7VK](https://github.com/WinterSnowfall/d7vk/releases), Copy the ddraw.dll into your game folder, and use `DXVK_HUD` to see if game is using D7VK.*
 
 
+
 ## CPU Translation and emulation ⭐⭐⭐⭐⭐
 There's 2 CPU Translators, Fexcore on Proton/wine arm64ec & Box64 on Proton/wine X86_64.
 
-On proton arm64ec You have the option to use wowbox64 as the 32 bit emulator, which may perform better in some cases.
+On Proton arm64ec You have the option to use wowbox64 as the 32 bit emulator, which may perform better in some cases.
 
 This guide will cover Fexcore, as it generally uses less ram and has less overhead and it's preset as it has lesser parameters and is easier to configure.
 
