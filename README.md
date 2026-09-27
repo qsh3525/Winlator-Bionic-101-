@@ -108,6 +108,11 @@ Second, it allows you to use HDR on the games that support it.
 
 Lastly, do not expect performance to be as good as x11 yet, it is an early implementation, and not remotely as mature as x11 which has been tried and tested in Linux and winlator for so long.
 
+> USAGE Guide
+- Ensure the proton version you're using supports Wayland
+- Pick Wayland as the display server.
+- Make sure turnip is being used as the compositor driver, otherwise the screen will be black.
+
 # Display Renderers; 
 **OpenGL** - Deprecated in most forks
 
