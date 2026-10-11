@@ -15,16 +15,9 @@ Mainly catered to adreno gpu users. Mali and Xclipse gpu users can still benefit
 
 4. For GOG/game installers, use Proton x86_64 with Box64 Intermediate preset OR use [BFE](https://github.com/The412Banner/BFE/releases) and extract the game files in a fraction of the time.
 
-5. Don't expect ~~EA Launcher~~ or Ubisoft connect or Rockstar Launcher to run on winlator forks; to this date, there is no fork that can run those, only gamehub can, this entry will be updated soon.
-[BANNERLATOR 3.0.7+ Supports EA LAUNCHER](https://github.com/The412Banner/Bannerlator/releases)
 
 ## Proton/wine
 
-**Proton 9** is the original and default, and should be used first. 
-
-**Proton-10arm64ec** should also be used as a default fallback; as most cutscenes and fmv's not working are fixed in this version.
-
-**Proton 11 and above;** these versions can be used to gain performance in some games and provide more compatibility.
 
 
 ## Win components
@@ -97,21 +90,6 @@ for a7xx - [StevenMXZ](https://github.com/StevenMXZ/Adreno-Tools-Drivers/release
 
 for a8xx - [StevenMXZ](https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases), [Whitebelyash](https://github.com/whitebelyash/AdrenoToolsDrivers/releases)
 
-## Display Servers 
-So by now, you know of X11, it's used in gamehub and winlator. 
-[Bannerlator](https://github.com/The412Banner/Bannerlator/releases/) recently introduced a new display server to be used on Android, called Wayland.
-what benefits does it offer over x11?
-
-For starters, it should offer better frametimes, because it has a shorter path to compose frames to your display than x11.
-
-Second, it allows you to use HDR on the games that support it.
-
-Lastly, do not expect performance to be as good as x11 yet, it is an early implementation, and not remotely as mature as x11 which has been tried and tested in Linux and winlator for so long.
-
-> USAGE Guide
-- Ensure the proton version you're using supports Wayland
-- Pick Wayland as the display server.
-- Make sure turnip is being used as the compositor driver, otherwise the screen will be black.
 
 # Display Renderers; 
 **OpenGL** - Deprecated in most forks
