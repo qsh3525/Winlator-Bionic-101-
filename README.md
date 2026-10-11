@@ -122,7 +122,7 @@ Lastly, do not expect performance to be as good as x11 yet, it is an early imple
 
 **EGL** - Best for OpenGL games, offering the best FPS for opengl API games.
 
-**DisplayX** - Better than surfaceFlinger, developed by pippeto crypto, offers vastly better frame pacing than any other implementations; However at the time of making this guide, the 'Bypass x11' option within DisplayX will give a 10% or much more, depending on the game, fps loss upon usage.
+
 
 # OpenGL API games
 in winlator bionic there's 2 graphics options 
@@ -146,10 +146,7 @@ These games are fairly simple to run, and does not need much for graphical confi
 # Relevant DirectX Wrappers for DX Games ⭐
 
 **DXVK** - Translates DX8-11 to Vulkan
-**Recommended for adreno: 2.4.1.1 or newer DXVK Tagged with 'binsem' or 'pre-regress', .**
-> Why use binsem or pre regress versions of newer DXVK?**
-- There has been a long standing regression in turnip that causes a performance regression with new dxvk. [Full document and deep dive into this issue by Lee gao here.](https://docs.google.com/document/d/1ggdFKIRHjO2DBonrvjQQMNFCNIcBHwh_NAfJ2i_m5fI/edit?tab=t.0#heading=h.gp0wvhqt8o7q)
-- binsem tagged dxvk therefore implements a patch by Lee gao that tends to mitigate this performance regression, so if your game needs a new dxvk to not have graphical glitches, you can finally use it without performance repercussions! Make sure to add the variable `DXVK_DISABLE_TIMELINE_SEMAPHORES=1` upon usage.
+**Make sure to use the latest Winnative Turnip drivers, or drivers released after StevenMXZ's V37-Patched driver to use the newest dxvk without any performance regressions.**
 
 > Why use arm64ec dxvk?
 
