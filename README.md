@@ -17,6 +17,20 @@ Mainly catered to adreno gpu users. Mali and Xclipse gpu users can still benefit
 
 
 ## Proton/wine
+Compatibility layer to run windows games/apps.
+in winlator bionic, it has to be compiled against bionic libc for use.
+
+Recommended versions: 
+
+**Proton-9arm64ec** - It is the most stable, and default layer included in winlator bionic. 
+
+**Proton 10, 11 and above from Gamenative and The412Banner** - Fixes a lot of games, and often gives better performance, they have many additions that can contribute to power saving and stutter mitigation.
+here's a list of environmental variables that can be useful in these new protons for winlator bionic. (make sure they actually have these patches) 
+
+`WINE_FAST_YIELD=1` - It greatly reduces uncesscesary CPU draw, increasing stability in most games. it notably reduces power draw in cyberpunk by half.
+
+`PROTON_NO_KERNEL_NTSYNC=1` in GN proton, or `WINENTSYNC=1` in 412Banner proton - It is a userspace NTSYNC implementation, that doesn't rely on having a kernel driver for ntsync.
+It reduces stuttering in games, and serves as a replacement/alternative for ESYNC if it can't be used in the game, and gives back performance.
 
 
 
@@ -48,7 +62,7 @@ Some of these are very important, and crucial to get some games to boot.
 
 `-d3d12` or `dx12` ; Same reason as above
 
-`-force-gfx-direct` ; Stops some crashes on unity games, and increases performance! 
+`-force-gfx-direct` ; Stops some crashes on unity games, and may increase perf in rare cases 
 
 `--rendering-driver vulkan` ; Required for most godot games to switch to the Vulkan API, as it mostly defaults to opengl, which is kinda broken on godot games..
 
