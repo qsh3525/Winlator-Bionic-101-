@@ -98,11 +98,16 @@ List of wrappers of relevance in forks:
 *Wrapper-Gamenative ⭐* - found in many forks now; best wrapper for Mali and xclipse, contains new improvements by Lee gao regarding running dxvk 2.0+ and VKD3D on new Mali driver blobs. ***Not recommended for adreno users.***
 
 # Graphics Drivers
-for a6xx - [Amaral turnip](https://github.com/rickamaral94/Amaral-Adreno-Tools) and [StevenMXZ](https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases)
+for a6xx - [Amaral turnip](https://github.com/rickamaral94/Amaral-Adreno-Tools), [StevenMXZ](https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases), [MrPurple T19](https://github.com/MrPurple666/purple-turnip/releases/tag/vturnip_mrpurple-T19-toasted.adpkg)
+
 
 for a7xx - [StevenMXZ](https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases), [Winnative, specifically the P variant drivers, which keeps gpu frequencies and usage high, otherwise use StevenMXZ](https://github.com/nicholasx417/WinNative-Components/releases/tag/WinNative-Turnip)
 
-for a8xx - [StevenMXZ](https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases), [Whitebelyash](https://github.com/whitebelyash/AdrenoToolsDrivers/releases)
+for a8xx - [StevenMXZ](https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases), [Whitebelyash](https://github.com/whitebelyash/AdrenoToolsDrivers/releases), [Gamehub Rutabaga turnip](https://github.com/StevenMXZ/Adreno-Tools-Drivers/releases/tag/gamesir)
+
+> PSA. Newer Winnative turnip versions & StevenMXZ V37-Patched drivers have winnative patches for mesh shader emulation. this fixes Alan wake 2 and a few other new dx12 games that require mesh shader.
+
+> Gamehub Rutabaga turnip fixes freezing in Cyberpunk 2077 on the adreno 830.
 
 
 # Display Renderers; 
