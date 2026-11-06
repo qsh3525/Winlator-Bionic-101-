@@ -89,9 +89,11 @@ A very important component that is used to load your graphics driver to run vulk
 
 List of wrappers of relevance in forks:
 
-**Wrapper 🌟✨**- The most up to date wrapper, good for adreno gpu devices, also supports bcn texture decomp needed for Xclispe and Mali GPUs, not yet support bcn to ASTC like wrapper-gamenative though for mali/exynos.
+**Wrapper 🌟✨**- Up to date wrapper v25 that has features and fixes for adreno for compatibility and performance.
 
-*Wrapper-v2* - Old and unfinished, found in [cmod-v13](https://github.com/coffincolors/winlator/releases/tag/cmod_v13.1) and [Gamenative](https://github.com/utkarshdalal/GameNative/releases), Shouldn't be used, as 'wrapper' performs better and have more fixes.
+contains additions like bcn emulation for xclipse/Mali as well, but to astc transcode yet.
+
+*Wrapper-v2* - Old and unfinished wrapper v25, ceased development due to developer's device loss, found in [cmod-v13](https://github.com/coffincolors/winlator/releases/tag/cmod_v13.1) and [Gamenative](https://github.com/utkarshdalal/GameNative/releases), Shouldn't be used, as 'wrapper' performs better and have more fixes.
 
 *Wrapper-leegao* - found in gamenative, it is [Lee gao's bionic wrapper](https://github.com/leegao/bionic-vulkan-wrapper/releases/tag/v0.0.5r5), for mali and Xclipse GPUs, better alternative exists by now.
 
