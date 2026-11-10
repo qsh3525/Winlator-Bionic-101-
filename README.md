@@ -91,7 +91,7 @@ List of wrappers of relevance in forks:
 
 **Wrapper 🌟✨**- Up to date wrapper v25 that has features and fixes for adreno for compatibility and performance.
 
-contains additions like bcn emulation for xclipse/Mali as well, but to astc transcode yet.
+contains additions like bcn emulation for xclipse/Mali as well.
 
 *Wrapper-v2* - Old and unfinished wrapper v25, ceased development due to developer's device loss, found in [cmod-v13](https://github.com/coffincolors/winlator/releases/tag/cmod_v13.1) and [Gamenative](https://github.com/utkarshdalal/GameNative/releases), Shouldn't be used, as 'wrapper' performs better and have more fixes.
 
@@ -121,7 +121,7 @@ for a8xx - [StevenMXZ](https://github.com/StevenMXZ/Adreno-Tools-Drivers/release
 
 **EGL** - Best for OpenGL games, offering the best FPS for opengl API games.
 
-
+**DisplayX** - Similar to SurfaceFlinger, reiterates the same principle of bypassing the XServer to reduce latency, with more compatibility. Guide on specific options will be added here soon. 
 
 # OpenGL API games
 in winlator bionic there's 2 graphics options 
@@ -176,7 +176,7 @@ There's 2 CPU Translators, Fexcore on Proton/wine arm64ec & Box64 on Proton/wine
 
 On Proton arm64ec You have the option to use wowbox64 as the 32 bit emulator, which may perform better in some cases.
 
-This guide will cover Fexcore, as it generally uses less ram and has less overhead and it's preset as it has lesser parameters and is easier to configure.
+This guide will cover Fexcor
 
 # Fexcore PPA .wcp
 Recommended to use for those with older kernel devices to prevent fexcore from crashing outright. the ppa builds have some build flags that don't crash on older kernel devices. Go to the first header to find downloads.
